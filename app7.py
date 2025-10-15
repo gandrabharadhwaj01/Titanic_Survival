@@ -2,6 +2,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
 import pickle
+import numpy as np
 model=pickle.load(open('Logistic_Regression_model.pkl','rb'))
 st.title('Titanic Survival Prediction')
 
@@ -30,3 +31,4 @@ probability = model.predict_proba(features)[0][1]
 st.subheader('Prediction Result')
 st.write('Survived' if prediction == 1 else 'Did Not Survive' )
 st.write(f'Survival Probability : {probability:.2f}')
+
